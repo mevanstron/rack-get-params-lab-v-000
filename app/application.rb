@@ -19,7 +19,7 @@ class Application
       @@cart.each {|c_item| resp.write "#{c_item}\n"} if @@cart != []
     elsif req.path.match(/add/)
       add_term = req.params["q"]
-      resp.
+      resp.write handle_add(add_term)
     else
       resp.write "Path Not Found"
     end
